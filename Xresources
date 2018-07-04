@@ -1,0 +1,7 @@
+!xterm options
+xterm.vt100.renderFont: true
+xterm.vt100.faceName:Fira Mono:size=18:antialias=true
+
+urxvt.scrollBar: false
+urxvt.font: xft:Operator Mono:size=18
+#include ".Xresources.d/colors"
