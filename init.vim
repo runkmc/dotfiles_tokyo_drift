@@ -56,10 +56,8 @@ set noshowmode
 set noswapfile
 set number
 set shiftround
-set shiftwidth=4
 set showmatch
 set showmode
-set tabstop=4
 set textwidth=79
 
 " Some mappings
