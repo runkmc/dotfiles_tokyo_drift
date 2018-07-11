@@ -14,6 +14,7 @@ if dein#load_state('~/.local/share/dein')
 	call dein#add('tpope/vim-repeat')
 	call dein#add('tpope/vim-surround')
 	call dein#add('tpope/vim-unimpaired')
+	call dein#add('arcticicestudio/nord-vim')
 
 	if !has('nvim')
 		call dein#add('roxma/nvim-yarp')
@@ -77,6 +78,7 @@ vnoremap . :norm.<CR>
 let mapleader = "\<SPACE>"
 
 " colors and purely visual things
+colorscheme nord
 highlight Comment cterm=italic gui=italic
 highlight String cterm=italic gui=italic
 " highlight Type cterm=italic gui=italic
