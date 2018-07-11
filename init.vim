@@ -15,6 +15,7 @@ if dein#load_state('~/.local/share/dein')
 	call dein#add('tpope/vim-surround')
 	call dein#add('tpope/vim-unimpaired')
 	call dein#add('arcticicestudio/nord-vim')
+	call dein#add('itchyny/lightline.vim')
 
 	if !has('nvim')
 		call dein#add('roxma/nvim-yarp')
@@ -81,6 +82,7 @@ let mapleader = "\<SPACE>"
 colorscheme nord
 highlight Comment cterm=italic gui=italic
 highlight String cterm=italic gui=italic
+let g:lightline = {'colorscheme':'nord',}
 " highlight Type cterm=italic gui=italic
 
 " Spellbad settings
