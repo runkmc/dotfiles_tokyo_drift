@@ -9,13 +9,17 @@ if dein#load_state('~/.local/share/dein')
 
 	call dein#add('~/.local/share/dein')
 	call dein#add('Shougo/deoplete.nvim')
+	" tpope plugins
 	call dein#add('tpope/vim-commentary')
 	call dein#add('tpope/vim-fugitive')
 	call dein#add('tpope/vim-repeat')
 	call dein#add('tpope/vim-surround')
 	call dein#add('tpope/vim-unimpaired')
+	" colors/display
 	call dein#add('arcticicestudio/nord-vim')
 	call dein#add('itchyny/lightline.vim')
+	"language specific
+	call dein#add('itchyny/vim-haskell-indent')
 
 	if !has('nvim')
 		call dein#add('roxma/nvim-yarp')
