@@ -9,17 +9,19 @@ if dein#load_state('~/.local/share/dein')
 
 	call dein#add('~/.local/share/dein')
 	call dein#add('Shougo/deoplete.nvim')
+	call dein#add('christoomey/vim-tmux-navigator')
 	" tpope plugins
-	call dein#add('tpope/vim-commentary')
-	call dein#add('tpope/vim-fugitive')
 	call dein#add('tpope/vim-repeat')
 	call dein#add('tpope/vim-surround')
 	call dein#add('tpope/vim-unimpaired')
+	call dein#add('tpope/dispatch')
 	" colors/display
 	call dein#add('arcticicestudio/nord-vim')
 	call dein#add('itchyny/lightline.vim')
 	"language specific
 	call dein#add('itchyny/vim-haskell-indent')
+        call dein#add('elixir-editors/vim-elixir')
+        call dein#add('elmcast/elm-vim')
 
 	if !has('nvim')
 		call dein#add('roxma/nvim-yarp')
@@ -34,6 +36,7 @@ filetype plugin indent on
 syntax enable
 
 " general option setting and whatnot
+set expandtab
 set autoindent
 set backspace=2 " Backspace like a normal person
 set clipboard=unnamed
@@ -70,11 +73,23 @@ nnoremap <Left> <C-PageUp>
 nnoremap <Right> <C-PageDown>
 nnoremap <Up> :tabnew<CR> 
 nnoremap <Down> :tabc<CR> 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
 inoremap <Left> <C-PageUp>
 inoremap <Right> <C-PageDown>
 inoremap <Up> <Esc>:tabnew<CR> 
 inoremap <Down> <Esc>:tabc<CR> 
 vnoremap . :norm.<CR>
+
+" vim-test settings
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+let test#strategy = "dispatch"
 
 " Leader mappings
 " nnoremap <SPACE> <Nop>
