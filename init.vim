@@ -2,19 +2,19 @@ if &compatible
 	set nocompatible
 endif
 " Add the dein installation directory into runtimepath
-set runtimepath+=~/.local/share/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/kevin/.local/share/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.local/share/dein')
-	call dein#begin('~/.local/share/dein')
+if dein#load_state('/home/kevin/.local/share/dein')
+	call dein#begin('/home/kevin/.local/share/dein')
 
-	call dein#add('~/.local/share/dein')
+	call dein#add('/home/kevin/.local/share/dein')
 	call dein#add('Shougo/deoplete.nvim')
 	call dein#add('christoomey/vim-tmux-navigator')
 	" tpope plugins
 	call dein#add('tpope/vim-repeat')
 	call dein#add('tpope/vim-surround')
 	call dein#add('tpope/vim-unimpaired')
-	call dein#add('tpope/dispatch')
+	call dein#add('tpope/vim-dispatch')
 	" colors/display
 	call dein#add('arcticicestudio/nord-vim')
 	call dein#add('itchyny/lightline.vim')
