@@ -16,8 +16,8 @@ if dein#load_state('/home/kevin/.local/share/dein')
 	call dein#add('tpope/vim-unimpaired')
 	call dein#add('tpope/vim-dispatch')
 	" colors/display
-	call dein#add('arcticicestudio/nord-vim')
 	call dein#add('itchyny/lightline.vim')
+	call dein#add('morhetz/gruvbox')
 	"language specific
 	call dein#add('itchyny/vim-haskell-indent')
         call dein#add('elixir-editors/vim-elixir')
@@ -96,10 +96,11 @@ let test#strategy = "dispatch"
 let mapleader = "\<SPACE>"
 
 " colors and purely visual things
-colorscheme nord
+let g:gruvbox_italic = 1
+colorscheme gruvbox
 highlight Comment cterm=italic gui=italic
 highlight String cterm=italic gui=italic
-let g:lightline = {'colorscheme':'nord',}
+let g:lightline = {'colorscheme':'jellybeans',}
 " highlight Type cterm=italic gui=italic
 
 " Spellbad settings
