@@ -4,11 +4,12 @@
                          ("org" . "https://orgmode.org/elpa/")
 			 ("elpa" . "https://elpa.gnu.org/packages/")))
 ;; set a theme
-(load-theme 'gruvbox-dark-soft 't)
+;; (load-theme 'solarized-light t)
 
 ;; remove the menu bar
 (menu-bar-mode -1)
 (setq truncate-lines nil)
+
 ;soft wrapping
 (global-visual-line-mode t)
 
@@ -22,6 +23,11 @@
 
 ;; turn on which-key
 (which-key-mode)
+
+;; telephone line, give me some time, I'm living in twilight
+(setq telephone-line-primary-left-separator 'telephone-line-flat)
+(setq telephone-line-primary-right-separator 'telephone-line-flat)
+(telephone-line-mode 1)
 
 ;;deft settings
 (use-package deft
@@ -57,6 +63,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "c433c87bd4b64b8ba9890e8ed64597ea0f8eb0396f4c9a9e01bd20a04d15d358" default))
  '(global-display-line-numbers-mode t)
  '(org-agenda-show-future-repeats 'next)
  '(org-attach-archive-delete 'query)
@@ -85,10 +93,12 @@
  '(org-refile-use-outline-path 'file)
  '(org-track-ordered-property-with-tag t)
  '(package-selected-packages
-   '(rainbow-delimiters which-key use-package deft ht org-super-agenda markdown-mode gruvbox-theme ## org-roam evil org)))
+   '(telephone-line rainbow-delimiters which-key use-package deft ht org-super-agenda markdown-mode ## org-roam evil org)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(org-agenda-date ((t (:background "magenta" :foreground "white" :inverse-video nil :box (:line-width 2 :color "#fdf6e3") :overline nil :underline t :slant normal :weight normal :height 1.0))))
+ '(org-agenda-dimmed-todo-face ((t (:foreground "brightred"))))
+ '(org-level-1 ((t (:inherit outline-1 :extend nil :foreground "yellow")))))
