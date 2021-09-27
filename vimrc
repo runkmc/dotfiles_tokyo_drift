@@ -114,6 +114,7 @@ nnoremap gX yaw:!open <C-R>"
 " colors and purely visual things
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
+set t_ut=""
 set termguicolors
 set background=dark
 let g:gruvbox_material_background = 'soft'
