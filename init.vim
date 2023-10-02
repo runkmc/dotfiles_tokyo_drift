@@ -1,36 +1,6 @@
 if &compatible
 	set nocompatible
 endif
-" Add the dein installation directory into runtimepath
-set runtimepath+=/home/kevin/.local/share/dein/repos/github.com/Shougo/dein.vim
-
-if dein#load_state('/home/kevin/.local/share/dein')
-	call dein#begin('/home/kevin/.local/share/dein')
-
-	call dein#add('/home/kevin/.local/share/dein')
-	call dein#add('Shougo/deoplete.nvim')
-	call dein#add('christoomey/vim-tmux-navigator')
-	" tpope plugins
-	call dein#add('tpope/vim-repeat')
-	call dein#add('tpope/vim-surround')
-	call dein#add('tpope/vim-unimpaired')
-	call dein#add('tpope/vim-dispatch')
-	" colors/display
-	call dein#add('itchyny/lightline.vim')
-	call dein#add('morhetz/gruvbox')
-	"language specific
-	call dein#add('itchyny/vim-haskell-indent')
-        call dein#add('elixir-editors/vim-elixir')
-        call dein#add('elmcast/elm-vim')
-
-	if !has('nvim')
-		call dein#add('roxma/nvim-yarp')
-		call dein#add('roxma/vim-hug-neovim-rpc')
-	endif
-
-	call dein#end()
-	call dein#save_state()
-endif
 
 filetype plugin indent on
 syntax enable
@@ -83,24 +53,14 @@ inoremap <Up> <Esc>:tabnew<CR>
 inoremap <Down> <Esc>:tabc<CR> 
 vnoremap . :norm.<CR>
 
-" vim-test settings
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
-let test#strategy = "dispatch"
 
 " Leader mappings
 " nnoremap <SPACE> <Nop>
 let mapleader = "\<SPACE>"
 
 " colors and purely visual things
-let g:gruvbox_italic = 1
-colorscheme gruvbox
 highlight Comment cterm=italic gui=italic
 highlight String cterm=italic gui=italic
-let g:lightline = {'colorscheme':'jellybeans',}
 " highlight Type cterm=italic gui=italic
 
 " Spellbad settings
