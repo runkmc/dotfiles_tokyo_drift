@@ -1,14 +1,15 @@
 call plug#begin()
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'axvr/org.vim'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'dyng/ctrlsf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'lervag/vimtex'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sainnhe/gruvbox-material'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'NLKNguyen/papercolor-theme'
 
 " tpope
 Plug 'tpope/vim-speeddating'
@@ -25,7 +26,7 @@ if &compatible
 endif
 filetype plugin indent on
 syntax enable
-autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 expandtab spell
 
 " general option setting and whatnot
 set expandtab
@@ -54,6 +55,7 @@ set shiftround
 set showmatch
 set showmode
 set textwidth=79
+set conceallevel=2
 
 " Some mappings
 nnoremap j gj
@@ -112,14 +114,31 @@ let g:netrw_browsex_viewer="open"
 nnoremap gX yaw:!open <C-R>"
 
 " colors and purely visual things
+" settings so italics work
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
-set t_ut=""
+" This is only necessary if you use set termguicolors.
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" fixes glitch? in colors when using vim with tmux
+" set background=dark
+set t_Co=256
+
+" setting so background colors work
+" set t_ut=""
+
 set termguicolors
 set background=dark
 let g:gruvbox_material_background = 'soft'
 colorscheme gruvbox-material
 let g:airline_theme='gruvbox_material'
+" let g:airline_theme='papercolor'
+
+" set background=light
+" colorscheme PaperColor
+" colorscheme material
+
 highlight Comment cterm=italic gui=italic
 highlight String cterm=italic gui=italic
 highlight Type cterm=italic gui=italic
@@ -127,4 +146,4 @@ highlight Normal ctermbg=NONE
 
 " Spellbad settings
 highlight clear SpellBad
-highlight SpellBad guifg=#FFFFFF guibg=#FF0000 ctermfg=red cterm=underline
+highlight SpellBad guifg=#32302f guibg=#ea6962 gui=bold cterm=bold cterm=underline
